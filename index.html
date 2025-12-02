@@ -23,7 +23,7 @@
                             base: '#714B67', // Roxo Odoo
                             light: '#8f6a85',
                             dark: '#5a3750',
-                            accent: '#00E891' // Verde Odoo (aprox) para detalhes
+                            accent: '#00E891'
                         }
                     },
                     animation: {
@@ -48,8 +48,7 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background-color: #714B67; /* Roxo Odoo Base */
-            /* Padrão de textura sutil de linhas (grid) */
+            background-color: #714B67;
             background-image: 
                 linear-gradient(90deg, transparent 50%, rgba(255,255,255,0.05) 50%),
                 linear-gradient(0deg, transparent 50%, rgba(255,255,255,0.05) 50%);
@@ -64,12 +63,11 @@
             font-family: 'Mountains of Christmas', cursive;
         }
         
-        /* Classe específica para a fonte Inter */
         .font-inter {
             font-family: 'Inter', sans-serif;
         }
 
-        #letterModal, #teamModal {
+        #letterModal {
             transition: opacity 0.3s ease-in-out;
         }
 
@@ -80,21 +78,11 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        .team-input {
-            border: none;
-            border-bottom: 2px solid #e5e7eb;
-            transition: border-color 0.3s;
-        }
-        .team-input:focus {
-            outline: none;
-            border-bottom-color: #714B67;
-        }
-        
-        /* Estilos para a Paginação */
+        /* Paginação */
         .pagination-button {
             padding: 0.5rem 1rem;
             background-color: white;
-            color: #714B67; /* odoo-base */
+            color: #714B67;
             font-weight: bold;
             border-radius: 0.375rem;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -115,7 +103,7 @@
             color: white;
         }
 
-        /* Estilo das Abas de Navegação */
+        /* Abas */
         .nav-tab {
             padding: 0.75rem 1.5rem;
             font-weight: 700;
@@ -127,8 +115,6 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
-        /* Estado Ativo: Branco Brilhante */
         .nav-tab.active {
             background-color: rgba(255, 255, 255, 0.2);
             color: #ffffff;
@@ -137,14 +123,11 @@
             transform: scale(1.05);
             backdrop-filter: blur(4px);
         }
-        
-        /* Estado Inativo: Transparente/Opaco */
         .nav-tab.inactive {
             background-color: transparent;
             color: rgba(255, 255, 255, 0.5);
             border-color: transparent;
         }
-        
         .nav-tab.inactive:hover {
             color: #ffffff;
             background-color: rgba(255, 255, 255, 0.1);
@@ -153,45 +136,41 @@
 </head>
 <body class="min-h-screen pb-12 text-gray-800 flex flex-col">
 
-    <!-- Header Limpo com Logo Centralizada -->
+    <!-- Header -->
     <header class="pt-8 pb-4 relative z-10 text-center">
         <div class="container mx-auto px-4">
-            <!-- Logo Container -->
             <div class="w-full max-w-[280px] mx-auto mb-6">
                 <img src="odoo_logo_inverted.svg" 
                      alt="Logo Odoo" 
                      class="w-full h-auto object-contain drop-shadow-2xl brightness-110 filter hover:scale-105 transition-transform duration-500">
             </div>
-            
             <h1 class="text-3xl md:text-4xl text-white font-bold tracking-wide uppercase christmas-font drop-shadow-md">Natal Solidário Odoo</h1>
         </div>
     </header>
 
-    <!-- Navegação entre Sessões -->
+    <!-- Navegação -->
     <div class="container mx-auto px-4 mb-8">
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 font-inter">
-            <button onclick="window.switchTab('info')" id="tab-info" class="nav-tab active">
+            <button onclick="switchTab('info')" id="tab-info" class="nav-tab active">
                 <i data-lucide="info" class="w-5 h-5"></i>
                 Sobre o Projeto
             </button>
-            <button onclick="window.switchTab('cards')" id="tab-cards" class="nav-tab inactive">
+            <button onclick="switchTab('cards')" id="tab-cards" class="nav-tab inactive">
                 <i data-lucide="gift" class="w-5 h-5"></i>
                 Adotar uma Estrelinha
             </button>
         </div>
     </div>
 
-    <!-- Conteúdo Principal -->
+    <!-- Conteúdo -->
     <main class="container mx-auto px-4 flex-grow relative">
         
-        <!-- SESSÃO 1: INFORMAÇÕES (Sobre o Projeto) -->
+        <!-- ABA: SOBRE O PROJETO -->
         <div id="view-info" class="animate-fade-in max-w-5xl mx-auto">
             <div class="grid md:grid-cols-12 gap-6">
                 
-                <!-- Coluna Principal: Boas Vindas -->
                 <div class="md:col-span-12 bg-white rounded-2xl shadow-xl overflow-hidden font-inter">
                     <div class="bg-odoo-dark p-8 text-center relative overflow-hidden">
-                        <!-- Círculos decorativos -->
                         <div class="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-10 -translate-y-10"></div>
                         <div class="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full translate-x-10 translate-y-10"></div>
                         
@@ -204,29 +183,26 @@
                     
                     <div class="p-8">
                         <div class="grid md:grid-cols-3 gap-8">
-                            <!-- Card: Como Funciona -->
                             <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div class="w-12 h-12 bg-purple-100 text-odoo-base rounded-lg flex items-center justify-center mb-4">
                                     <i data-lucide="heart-handshake" class="w-6 h-6"></i>
                                 </div>
                                 <h3 class="font-bold text-gray-800 text-lg mb-2">Como Funciona?</h3>
                                 <p class="text-gray-600 text-sm leading-relaxed">
-                                    Navegue até a aba de cartinhas, escolha uma criança e registre o nome do seu <strong>Time</strong> para apadrinhar o sonho dela.
+                                    Navegue até a aba de cartinhas, escolha uma criança e verifique a disponibilidade. Para adotar, contate a organização.
                                 </p>
                             </div>
 
-                            <!-- Card: Prazo -->
                             <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center mb-4">
                                     <i data-lucide="calendar-clock" class="w-6 h-6"></i>
                                 </div>
                                 <h3 class="font-bold text-gray-800 text-lg mb-2">Prazo Importante</h3>
                                 <p class="text-gray-600 text-sm leading-relaxed">
-                                    O período para adotar uma criança vai até o dia <strong class="text-odoo-base">05/12</strong>. Não deixe para a última hora!
+                                    O período para adotar uma criança vai até o dia <strong class="text-odoo-base">05/12</strong>.
                                 </p>
                             </div>
 
-                            <!-- Card: Entrega -->
                             <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div class="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mb-4">
                                     <i data-lucide="map-pin" class="w-6 h-6"></i>
@@ -246,128 +222,56 @@
                     </div>
                 </div>
 
-                <!-- Banner Inferior: Orientações -->
-                <div class="md:col-span-12">
-                    <div class="bg-gradient-to-r from-odoo-light to-odoo-base rounded-2xl p-6 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 font-inter border-2 border-white/20">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-white/20 p-3 rounded-full shrink-0">
-                                <i data-lucide="gift" class="w-8 h-8 text-yellow-300"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg text-yellow-300 mb-1">Preparando o Presente</h3>
-                                <p class="text-white/90 text-sm">
-                                    Lembre-se: o presente deve estar <strong>embrulhado</strong> e <strong>etiquetado</strong> com a cartinha da criança.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 bg-black/20 px-4 py-3 rounded-lg shrink-0">
-                            <i data-lucide="life-buoy" class="w-5 h-5 text-white/70"></i>
-                            <div class="text-sm">
-                                <p class="font-bold">Precisa de ajuda?</p>
-                                <p class="text-white/80 text-xs">O Backoffice está disponível para apoiar.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Botão de Ação -->
                 <div class="md:col-span-12 text-center mt-4">
-                    <button onclick="window.switchTab('cards')" class="bg-yellow-400 hover:bg-yellow-500 text-odoo-dark font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg flex items-center gap-2 mx-auto font-inter">
+                    <button onclick="switchTab('cards')" class="bg-yellow-400 hover:bg-yellow-500 text-odoo-dark font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg flex items-center gap-2 mx-auto font-inter">
                         <i data-lucide="sparkles" class="w-5 h-5"></i>
-                        Quero Adotar uma Cartinha Agora!
+                        Ver Cartinhas Disponíveis
                     </button>
                 </div>
 
             </div>
         </div>
 
-        <!-- SESSÃO 2: CARTINHAS (Grid) -->
+        <!-- ABA: CARTINHAS -->
         <div id="view-cards" class="hidden animate-fade-in">
-            <!-- Grid ajustado para 3 colunas no máximo -->
             <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <!-- Cards gerados via JS -->
-                <div class="col-span-full text-center text-white py-12">
-                    <p class="text-xl">Carregando cartinhas...</p>
-                </div>
+                <!-- Cards injetados via JS -->
             </div>
             
-            <!-- Container da Paginação -->
             <div id="pagination-container" class="flex justify-center items-center gap-2 mb-8">
-                <!-- Botões de paginação gerados via JS -->
+                <!-- Paginação injetada via JS -->
             </div>
         </div>
 
     </main>
 
-    <!-- Modal de Leitura da Carta -->
+    <!-- Modal Leitura -->
     <div id="letterModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full overflow-hidden transform transition-all scale-95 opacity-0" id="letterModalContent">
-            
-            <!-- Modal Header -->
             <div class="bg-odoo-base p-4 flex justify-between items-center text-white">
                 <div class="flex items-center gap-2">
                     <i data-lucide="mail-open" class="w-5 h-5"></i>
                     <h3 class="font-bold text-lg" id="modalTitle">Visualizando Carta</h3>
                 </div>
-                <button onclick="window.closeModal('letterModal')" class="hover:bg-odoo-dark p-1 rounded-full transition-colors">
+                <button onclick="closeModal('letterModal')" class="hover:bg-odoo-dark p-1 rounded-full transition-colors">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-
-            <!-- Modal Body (A Carta) -->
             <div class="p-6 bg-yellow-50 overflow-y-auto max-h-[70vh] relative flex flex-col items-center">
                 <div class="paper-texture border border-gray-200 p-8 shadow-md rotate-1 transform mx-auto max-w-md relative w-full mb-6">
                     <div class="absolute top-4 right-4 text-red-400 opacity-50">
                         <i data-lucide="stamp" class="w-12 h-12"></i>
                     </div>
-                    <!-- Texto Transcrito -->
                     <p class="text-sm text-gray-400 mb-4 font-mono text-right">Natal 2024</p>
-                    <div class="handwritten text-2xl text-blue-900 leading-loose" id="modalText">
-                        <!-- Texto inserido via JS -->
-                    </div>
+                    <div class="handwritten text-2xl text-blue-900 leading-loose" id="modalText"></div>
                 </div>
-
-                <!-- Botão de Download da Imagem -->
                 <a id="downloadBtn" href="#" download class="flex items-center gap-2 bg-white text-odoo-base border-2 border-odoo-base font-bold py-2 px-6 rounded-full hover:bg-odoo-base hover:text-white transition-colors shadow-sm">
                     <i data-lucide="download" class="w-5 h-5"></i>
                     Baixar Cartinha Original
                 </a>
             </div>
-
-            <!-- Modal Footer -->
             <div class="p-4 bg-gray-50 border-t flex justify-end gap-3">
-                <button onclick="window.closeModal('letterModal')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg font-bold transition-colors">Fechar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Seleção de Time -->
-    <div id="teamModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden transform transition-all scale-95 opacity-0" id="teamModalContent">
-            
-            <div class="bg-yellow-400 p-4 text-yellow-900 flex justify-between items-center">
-                <h3 class="font-bold text-lg flex items-center gap-2">
-                    <i data-lucide="users" class="w-5 h-5"></i>
-                    Selecione seu Time
-                </h3>
-                <button onclick="window.closeModal('teamModal')" class="hover:bg-yellow-500 p-1 rounded-full transition-colors">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-
-            <div class="p-6">
-                <p class="text-gray-600 mb-4 text-sm font-inter">Qual time da Odoo está adotando esta estrelinha?</p>
-                <select id="teamSelect" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-odoo-base focus:outline-none bg-white text-gray-700 font-inter">
-                    <option value="" disabled selected>Escolha um time...</option>
-                </select>
-                <p class="text-xs text-red-500 mt-2 font-inter">Atenção: Ao confirmar, a carta será bloqueada para outros times.</p>
-            </div>
-
-            <div class="p-4 bg-gray-50 border-t flex justify-end gap-3">
-                <button onclick="window.closeModal('teamModal')" class="px-4 py-2 text-gray-500 hover:bg-gray-200 rounded-lg font-bold font-inter">Cancelar</button>
-                <button onclick="window.saveTeamSelection()" class="px-6 py-2 bg-odoo-base hover:bg-odoo-dark text-white rounded-lg font-bold shadow transition-colors font-inter">
-                    Confirmar
-                </button>
+                <button onclick="closeModal('letterModal')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg font-bold transition-colors">Fechar</button>
             </div>
         </div>
     </div>
@@ -377,108 +281,37 @@
         <p>© 2024 Odoo Natal Solidário.</p>
     </footer>
 
-    <!-- Firebase SDKs -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    <script>
+        // --- DADOS DAS CARTINHAS (HARD CODE) ---
+        // Para adotar, altere "assignedTeam" de null para o nome do time (ex: "Time do Backoffice")
+        const childrenData = [
+            { id: "1652416", assignedTeam: null, name: "Daniel", age: 4, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO AZUL", letterText: "Olá, Meu nome é Daniel e tenho 4 anos. Gosto de brincar com carrinhos. Gostaria de ganhar um carrinho de controle remoto azul. Obrigado Papai Noel 🚗", thumbColor: "bg-blue-100" },
+            { id: "1652572", assignedTeam: null, name: "Alice", age: 5, gender: "Feminino", request: "Casa de boneca", spec: "CASA DE BONECA LADYBUG", letterText: "Olá, meu nome é Alice e tenho 5 anos. Gosto de brincar de bonecos e gostaria de ganhar uma casa de boneca da Ladybug. Obrigado Papai Noel 🐞", thumbColor: "bg-pink-100" },
+            { id: "1652746", assignedTeam: null, name: "Davi Gabriel", age: 5, gender: "Masculino", request: "Pista de corrida", spec: "PISTA DE CORRIDA HOTWHEELS", letterText: "Olá, Meu nome é Davi Gabriel e tenho 5 anos. Brinco de boneco homem aranha e moto. Gostaria de ganhar uma pista de corrida. Obrigado Papai Noel 🏎️", thumbColor: "bg-orange-100" },
+            { id: "1652962", assignedTeam: null, name: "Davi Lucca", age: 6, gender: "Masculino", request: "Moto de brinquedo", spec: "MOTO DE BRINQUEDO GRANDE", letterText: "Olá, meu nome é Davi Lucca e tenho 5 anos. Brinco de carrinhos grandes. Gostaria de ganhar uma moto de brinquedo. Obrigado Papai Noel 🏍️", thumbColor: "bg-red-100" },
+            { id: "1653354", assignedTeam: null, name: "Melissa", age: 5, gender: "Feminino", request: "Boneca", spec: "BONECA COM MALA DE ROUPA", letterText: "Olá, meu nome é Melissa tenho 5 anos gostaria de ganhar uma boneca com malas de roupas. Obrigado papai noel 👗", thumbColor: "bg-pink-100" },
+            { id: "1653767", assignedTeam: null, name: "Miguel", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO SONIC", letterText: "meu nome é miguel e eu adoro o sonic, por isso quero do Papai Noel um Sonic, eu vou brincar muito com ele! 🦔", thumbColor: "bg-blue-100" },
+            { id: "1654249", assignedTeam: null, name: "Thomas", age: 4, gender: "Masculino", request: "Hot wheels", spec: "PISTA DA HOT WHEELS", letterText: "meu nome é Thomas e quero ganhar uma pista da Hotweels 🏎️", thumbColor: "bg-orange-100" },
+            { id: "1654586", assignedTeam: null, name: "Eloá", age: 3, gender: "Feminino", request: "Roupa", spec: "4 ROUPAS ROSA E MAQUINA DE BOLHAS", letterText: "PAPAI NOEL, MEU NOME É ELOÁ E GOSTARIA DE GANHAR UMA MAQUINA DE BOLHA DE SABÃO E ROUPAS ROSA 🫧", thumbColor: "bg-purple-100" },
+            { id: "1655949", assignedTeam: null, name: "Gustavo", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO HOMEM ARANHA", letterText: "PAPAI NOEL, GOSTARIA DE GANHAR UMA TEIA E BRINQUEDO DO HOMEM ARANHA E ROUPAS. MEU NOME É GUSTAVO 🕷️", thumbColor: "bg-red-100" },
+            { id: "1658529", assignedTeam: null, name: "Annalice", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN", letterText: "Annalice, 5 anos. Adora brincar de casinha no canto das bonecas. Seu pedido foi uma bebê reborn com acessórios que facilitam a vida das mamães como chupeta e mamadeira. 👶", thumbColor: "bg-teal-100" },
+            { id: "1659952", assignedTeam: null, name: "Marya Kanandra", age: 6, gender: "Feminino", request: "Boneca", spec: "UM BEBE REBORN E UM CARRINHO DE BONECA", letterText: "Marya Kanandra tem um jeitinho doce e encantador. Ela adora brincar de boneca. Seu maior desejo é ganhar uma bebê reborn e um carrinho de boneca. 🍼", thumbColor: "bg-purple-100" },
+            { id: "1659978", assignedTeam: null, name: "Arielly", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E BOLINHA DE SABAO", letterText: "Arielly tem 5 anos é uma menina doce e sonhadora. Ela ama brincar de boneca. O seu sonho é ganhar uma bebê reborn e bolha de sabão. 🫧", thumbColor: "bg-pink-100" },
+            { id: "1660010", assignedTeam: null, name: "Chloe", age: 6, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E SLIME", letterText: "Chloe tem 6 anos e é uma criança cheia de energia e sonhadora. Ela ama brincar de bonecas e seu sonho é ganhar uma bebê reborn e uma slime. 💖", thumbColor: "bg-purple-100" },
+            { id: "1660286", assignedTeam: null, name: "Lucca", age: 5, gender: "Masculino", request: "Pista de Carrinho", spec: "PISTA DE CARRINHO COBRA DA HOT WHEELS", letterText: "Lucca tem 5 anos e ama brincar de carrinho. Seu sonho é ganhar uma pista de carrinho de cobra da Hot Wheels. 🐍", thumbColor: "bg-yellow-100" },
+            { id: "1660943", assignedTeam: null, name: "Benicio", age: 6, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO E PIPA", letterText: "Benicio, 6 anos, adora brincar com carros, seu momento preferido do dia é quando aposta qual corre mais rapido com os colegas. Seu desejo é ter um de controle remoto e uma pipa. 🪁", thumbColor: "bg-blue-100" },
+            { id: "1661027", assignedTeam: null, name: "Calebe", age: 5, gender: "Masculino", request: "Carrinho de controle remoto", spec: "UM CARRINHO DE CONTROLE REMOTO E UMA PIPA", letterText: "Calebe, 5 anos, menino alegre e cheio de energia. Adora brincar com carros, os preferidos são os que ganham as corridas que faz com os colegas. Seu desejo é ter um de controle remoto e uma pipa. 🪁", thumbColor: "bg-green-100" },
+            { id: "1889235", assignedTeam: null, name: "Laura", age: 8, gender: "Feminino", request: "Boneca Kit slimeKit", spec: "BEBE REBORN KIT DE SLIME KIT DE CABELO", letterText: "FELIZ NATAL PAPAI NOEL VOCE PODE MIDAR UMA BEBE REBORN E UM CITI DE ISLAIME E DE ARUMAR CABELO", thumbColor: "bg-pink-100" },
+            { id: "1897050", assignedTeam: null, name: "Lara", age: 8, gender: "Feminino", request: "Patinete Livro", spec: "PATINETE 2 RODAS UM PRESENTE PRA IRMÃ DE 1 ANO", letterText: "QUERIDO NOEL MEU NOME É LARA E TENHO 8 ANOS E QUERIA UM PATINETE DE 2 RODAS O QUE ME DEU QUEBROU E PRA MINHA IRMÃ PODE TRAZE QUALQUER COISA ELA TEM 1 ANO EO NOME É RADASA. 🛴", thumbColor: "bg-yellow-100" },
+            { id: "1904825", assignedTeam: null, name: "Heloisa", age: 8, gender: "Feminino", request: "Material Escolar", spec: "GARRAFINHA DE ÁGUA DA CAPIVARA", letterText: "QUERIDO PAPAI NOEL. EU QUERO UM KIT DE CAPIVARA COMPLETO DE MATERIAL ESCOLAR COM GARRAFA E ATE APAGADOR DE CANETA. MEU NOME É HELOISA COIMBRA EU JÁ VOU FAZER 8 ANOS DIA 19 DE FEVEREIRO E EU SOU AQUARIANA. FELIZ NATAL HO HO HO 🦦", thumbColor: "bg-green-100" }
+        ];
 
-        // Configuração Firebase
-        const firebaseConfig = JSON.parse(__firebase_config);
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-
-        // Estado Global
-        let currentAdoptions = {};
-        let currentChildIdForTeam = null;
         let currentPage = 1;
         const itemsPerPage = 15;
 
-        // --- Lista de Times ---
-        const teamsList = [
-            "Time de Backoffice",
-            "Time de Customer Success",
-            "Time do ARRA",
-            "Time do GUAM",
-            "Time da JESM",
-            "Time da LUPA",
-            "Time do GAMA",
-            "Time do NACE",
-            "Time do BRCA",
-            "Time do GABN",
-            "Time do RODM",
-            "Time do LCOR",
-            "Time do RHSA",
-            "Time da NIME",
-            "Time do HMAZ",
-            "Time do SCLO",
-            "Time do JAPO",
-            "Time do Lub (Gerentes)"
-        ];
-
-        // --- Dados das Cartinhas (18 Cartas no total) ---
-        // IDs removidos: 1658482, 1660394, 1652962
-        const childrenData = [
-            { id: "1652416", name: "Daniel", age: 4, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO AZUL", letterText: "Olá, Meu nome é Daniel e tenho 4 anos. Gosto de brincar com carrinhos. Gostaria de ganhar um carrinho de controle remoto azul. Obrigado Papai Noel 🚗", thumbColor: "bg-blue-100" },
-            { id: "1652572", name: "Alice", age: 5, gender: "Feminino", request: "Casa de boneca", spec: "CASA DE BONECA LADYBUG", letterText: "Olá, meu nome é Alice e tenho 5 anos. Gosto de brincar de bonecos e gostaria de ganhar uma casa de boneca da Ladybug. Obrigado Papai Noel 🐞", thumbColor: "bg-pink-100" },
-            { id: "1652746", name: "Davi Gabriel", age: 5, gender: "Masculino", request: "Pista de corrida", spec: "PISTA DE CORRIDA HOTWHEELS", letterText: "Olá, Meu nome é Davi Gabriel e tenho 5 anos. Brinco de boneco homem aranha e moto. Gostaria de ganhar uma pista de corrida. Obrigado Papai Noel 🏎️", thumbColor: "bg-orange-100" },
-            { id: "1653354", name: "Melissa", age: 5, gender: "Feminino", request: "Boneca", spec: "BONECA COM MALA DE ROUPA", letterText: "Olá, meu nome é Melissa tenho 5 anos gostaria de ganhar uma boneca com malas de roupas. Obrigado papai noel 👗", thumbColor: "bg-pink-100" },
-            { id: "1653767", name: "Miguel", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO SONIC", letterText: "meu nome é miguel e eu adoro o sonic, por isso quero do Papai Noel um Sonic, eu vou brincar muito com ele! 🦔", thumbColor: "bg-blue-100" },
-            { id: "1654249", name: "Thomas", age: 4, gender: "Masculino", request: "Hot wheels", spec: "PISTA DA HOT WHEELS", letterText: "meu nome é Thomas e quero ganhar uma pista da Hotweels 🏎️", thumbColor: "bg-orange-100" },
-            { id: "1654586", name: "Eloá", age: 3, gender: "Feminino", request: "Roupa", spec: "4 ROUPAS ROSA E MAQUINA DE BOLHAS", letterText: "PAPAI NOEL, MEU NOME É ELOÁ E GOSTARIA DE GANHAR UMA MAQUINA DE BOLHA DE SABÃO E ROUPAS ROSA 🫧", thumbColor: "bg-purple-100" },
-            { id: "1655949", name: "Gustavo", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO HOMEM ARANHA", letterText: "PAPAI NOEL, GOSTARIA DE GANHAR UMA TEIA E BRINQUEDO DO HOMEM ARANHA E ROUPAS. MEU NOME É GUSTAVO 🕷️", thumbColor: "bg-red-100" },
-            { id: "1658529", name: "Annalice", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN", letterText: "Annalice, 5 anos. Adora brincar de casinha no canto das bonecas. Seu pedido foi uma bebê reborn com acessórios que facilitam a vida das mamães como chupeta e mamadeira. 👶", thumbColor: "bg-teal-100" },
-            { id: "1659952", name: "Marya Kanandra", age: 6, gender: "Feminino", request: "Boneca", spec: "UM BEBE REBORN E UM CARRINHO DE BONECA", letterText: "Marya Kanandra tem um jeitinho doce e encantador. Ela adora brincar de boneca. Seu maior desejo é ganhar uma bebê reborn e um carrinho de boneca. 🍼", thumbColor: "bg-purple-100" },
-            { id: "1659978", name: "Arielly", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E BOLINHA DE SABAO", letterText: "Arielly tem 5 anos é uma menina doce e sonhadora. Ela ama brincar de boneca. O seu sonho é ganhar uma bebê reborn e bolha de sabão. 🫧", thumbColor: "bg-pink-100" },
-            { id: "1660010", name: "Chloe", age: 6, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E SLIME", letterText: "Chloe tem 6 anos e é uma criança cheia de energia e sonhadora. Ela ama brincar de bonecas e seu sonho é ganhar uma bebê reborn e uma slime. 💖", thumbColor: "bg-purple-100" },
-            { id: "1660286", name: "Lucca", age: 5, gender: "Masculino", request: "Pista de Carrinho", spec: "PISTA DE CARRINHO COBRA DA HOT WHEELS", letterText: "Lucca tem 5 anos e ama brincar de carrinho. Seu sonho é ganhar uma pista de carrinho de cobra da Hot Wheels. 🐍", thumbColor: "bg-yellow-100" },
-            { id: "1660943", name: "Benicio", age: 6, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO E PIPA", letterText: "Benicio, 6 anos, adora brincar com carros, seu momento preferido do dia é quando aposta qual corre mais rapido com os colegas. Seu desejo é ter um de controle remoto e uma pipa. 🪁", thumbColor: "bg-blue-100" },
-            { id: "1661027", name: "Calebe", age: 5, gender: "Masculino", request: "Carrinho de controle remoto", spec: "UM CARRINHO DE CONTROLE REMOTO E UMA PIPA", letterText: "Calebe, 5 anos, menino alegre e cheio de energia. Adora brincar com carros, os preferidos são os que ganham as corridas que faz com os colegas. Seu desejo é ter um de controle remoto e uma pipa. 🪁", thumbColor: "bg-green-100" },
-            { id: "1889235", name: "Laura", age: 8, gender: "Feminino", request: "Boneca Kit slimeKit", spec: "BEBE REBORN KIT DE SLIME KIT DE CABELO", letterText: "FELIZ NATAL PAPAI NOEL VOCE PODE MIDAR UMA BEBE REBORN E UM CITI DE ISLAIME E DE ARUMAR CABELO", thumbColor: "bg-pink-100" },
-            { id: "1897050", name: "Lara", age: 8, gender: "Feminino", request: "Patinete Livro", spec: "PATINETE 2 RODAS UM PRESENTE PRA IRMÃ DE 1 ANO", letterText: "QUERIDO NOEL MEU NOME É LARA E TENHO 8 ANOS E QUERIA UM PATINETE DE 2 RODAS O QUE ME DEU QUEBROU E PRA MINHA IRMÃ PODE TRAZE QUALQUER COISA ELA TEM 1 ANO EO NOME É RADASA. 🛴", thumbColor: "bg-yellow-100" },
-            { id: "1904825", name: "Heloisa", age: 8, gender: "Feminino", request: "Material Escolar", spec: "GARRAFINHA DE ÁGUA DA CAPIVARA", letterText: "QUERIDO PAPAI NOEL. EU QUERO UM KIT DE CAPIVARA COMPLETO DE MATERIAL ESCOLAR COM GARRAFA E ATE APAGADOR DE CANETA. MEU NOME É HELOISA COIMBRA EU JÁ VOU FAZER 8 ANOS DIA 19 DE FEVEREIRO E EU SOU AQUARIANA. FELIZ NATAL HO HO HO 🦦", thumbColor: "bg-green-100" }
-        ];
-
-        // --- Inicialização e Auth ---
-        async function initAuth() {
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-            } catch (error) {
-                console.error("Erro na autenticação:", error);
-            }
-        }
-
-        // Listener de Adoções em Tempo Real
-        function setupRealtimeListener() {
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    const adoptionsRef = collection(db, 'artifacts', appId, 'public', 'data', 'adoptions');
-                    
-                    onSnapshot(adoptionsRef, (snapshot) => {
-                        const newAdoptions = {};
-                        snapshot.forEach((doc) => {
-                            newAdoptions[doc.id] = doc.data().team;
-                        });
-                        currentAdoptions = newAdoptions;
-                        window.renderCards(currentPage); // Re-renderiza com os dados novos
-                    }, (error) => {
-                        console.error("Erro ao ouvir dados:", error);
-                    });
-                }
-            });
-        }
-
-        // --- Funções Expostas para o HTML (Window) ---
-
-        window.renderCards = function(page = 1) {
+        // --- Renderização ---
+        function renderCards(page = 1) {
             const container = document.getElementById('cards-container');
-            if (!container) return;
             container.innerHTML = '';
 
             const startIndex = (page - 1) * itemsPerPage;
@@ -486,29 +319,26 @@
             const paginatedData = childrenData.slice(startIndex, endIndex);
 
             paginatedData.forEach(child => {
-                let teamButtonHTML;
-                const adoptedBy = currentAdoptions[child.id]; // Verifica no banco de dados
+                const titlePrefix = child.gender === 'Masculino' ? 'Cartinha do' : 'Cartinha da';
+                const cardTitle = `${titlePrefix} ${child.name}`;
                 
-                if (adoptedBy) {
-                    // Estado: JÁ ADOTADO (Bloqueado)
-                    teamButtonHTML = `
+                // Lógica de Status (Hard Code)
+                let statusButtonHTML;
+                if (child.assignedTeam) {
+                    statusButtonHTML = `
                         <button class="w-full bg-green-600 text-white font-bold py-2 px-4 rounded shadow cursor-default flex items-center justify-center gap-2 opacity-90">
                             <i data-lucide="check-circle" class="w-4 h-4"></i>
-                            <span class="truncate">Adotado por: ${adoptedBy}</span>
+                            <span class="truncate">Adotado por: ${child.assignedTeam}</span>
                         </button>
                     `;
                 } else {
-                    // Estado: DISPONÍVEL
-                    teamButtonHTML = `
-                        <button onclick="window.openTeamModal('${child.id}')" class="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded shadow transition-colors flex items-center justify-center gap-2">
-                            <i data-lucide="users" class="w-4 h-4"></i>
-                            Selecionar Time
+                    statusButtonHTML = `
+                        <button class="w-full bg-yellow-400 text-yellow-900 font-bold py-2 px-4 rounded shadow cursor-default flex items-center justify-center gap-2">
+                            <i data-lucide="gift" class="w-4 h-4"></i>
+                            Cartinha Disponível
                         </button>
                     `;
                 }
-
-                const titlePrefix = child.gender === 'Masculino' ? 'Cartinha do' : 'Cartinha da';
-                const cardTitle = `${titlePrefix} ${child.name}`;
 
                 const cardHTML = `
                     <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-odoo-base group">
@@ -532,11 +362,11 @@
                                 </div>
                             </div>
                             <div class="mt-auto space-y-3 pt-4 border-t border-gray-100">
-                                <button onclick="window.openModal('${child.id}')" class="w-full bg-odoo-base hover:bg-odoo-dark text-white font-bold py-2 px-4 rounded shadow transition-colors flex items-center justify-center gap-2">
+                                <button onclick="openModal('${child.id}')" class="w-full bg-odoo-base hover:bg-odoo-dark text-white font-bold py-2 px-4 rounded shadow transition-colors flex items-center justify-center gap-2">
                                     <i data-lucide="eye" class="w-4 h-4"></i>
                                     Ler Cartinha
                                 </button>
-                                ${teamButtonHTML}
+                                ${statusButtonHTML}
                             </div>
                         </div>
                     </div>
@@ -545,12 +375,11 @@
             });
             
             if (typeof lucide !== 'undefined') lucide.createIcons();
-            window.renderPagination();
+            renderPagination();
         }
 
-        window.renderPagination = function() {
+        function renderPagination() {
             const container = document.getElementById('pagination-container');
-            if (!container) return;
             container.innerHTML = '';
             
             const totalPages = Math.ceil(childrenData.length / itemsPerPage);
@@ -560,14 +389,14 @@
             prevButton.innerHTML = '<i data-lucide="chevron-left" class="w-5 h-5"></i>';
             prevButton.className = 'pagination-button flex items-center justify-center';
             prevButton.disabled = currentPage === 1;
-            prevButton.onclick = () => window.changePage(currentPage - 1);
+            prevButton.onclick = () => changePage(currentPage - 1);
             container.appendChild(prevButton);
 
             for (let i = 1; i <= totalPages; i++) {
                 const pageButton = document.createElement('button');
                 pageButton.innerText = i;
                 pageButton.className = `pagination-button ${i === currentPage ? 'active' : ''}`;
-                pageButton.onclick = () => window.changePage(i);
+                pageButton.onclick = () => changePage(i);
                 container.appendChild(pageButton);
             }
 
@@ -575,100 +404,14 @@
             nextButton.innerHTML = '<i data-lucide="chevron-right" class="w-5 h-5"></i>';
             nextButton.className = 'pagination-button flex items-center justify-center';
             nextButton.disabled = currentPage === totalPages;
-            nextButton.onclick = () => window.changePage(currentPage + 1);
+            nextButton.onclick = () => changePage(currentPage + 1);
             container.appendChild(nextButton);
 
             if (typeof lucide !== 'undefined') lucide.createIcons();
         }
 
-        window.populateTeamSelect = function() {
-            const select = document.getElementById('teamSelect');
-            select.innerHTML = '<option value="" disabled selected>Escolha um time...</option>';
-            teamsList.forEach(team => {
-                const option = document.createElement('option');
-                option.value = team;
-                option.innerText = team;
-                select.appendChild(option);
-            });
-        }
-
-        window.openTeamModal = function(id) {
-            currentChildIdForTeam = id;
-            document.getElementById('teamSelect').value = "";
-            const modal = document.getElementById('teamModal');
-            const content = document.getElementById('teamModalContent');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                content.classList.remove('scale-95', 'opacity-0');
-                content.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        window.saveTeamSelection = async function() {
-            const select = document.getElementById('teamSelect');
-            const selectedTeam = select.value;
-            
-            if (!selectedTeam) {
-                alert("Por favor, selecione um time.");
-                return;
-            }
-
-            if (!auth.currentUser) {
-                alert("Aguarde a conexão com o sistema...");
-                return;
-            }
-
-            try {
-                // SALVA NO FIREBASE
-                await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'adoptions', currentChildIdForTeam), {
-                    team: selectedTeam,
-                    timestamp: new Date().toISOString()
-                });
-                
-                window.closeModal('teamModal');
-            } catch (e) {
-                console.error("Erro ao salvar:", e);
-                alert("Houve um erro ao salvar a adoção. Tente novamente.");
-            }
-        }
-
-        window.changePage = function(newPage) {
-            const totalPages = Math.ceil(childrenData.length / itemsPerPage);
-            if (newPage < 1 || newPage > totalPages) return;
-            currentPage = newPage;
-            renderCards(currentPage);
-            document.getElementById('cards-container').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        window.openModal = function(id) {
-            const child = childrenData.find(c => c.id === id);
-            if (!child) return;
-
-            document.getElementById('modalTitle').innerText = `Visualizando Carta #${child.id}`;
-            document.getElementById('modalText').innerText = child.letterText;
-            const downloadBtn = document.getElementById('downloadBtn');
-            downloadBtn.href = `${child.id}.jpg`;
-            
-            const modal = document.getElementById('letterModal');
-            const content = document.getElementById('letterModalContent');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                content.classList.remove('scale-95', 'opacity-0');
-                content.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        window.closeModal = function(modalId) {
-            const modal = document.getElementById(modalId);
-            const content = modal.querySelector('div[class*="transform"]');
-            content.classList.remove('scale-100', 'opacity-100');
-            content.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        window.switchTab = function(tabName) {
+        // --- Navegação e Modais ---
+        function switchTab(tabName) {
             const infoView = document.getElementById('view-info');
             const cardsView = document.getElementById('view-cards');
             const tabInfo = document.getElementById('tab-info');
@@ -692,18 +435,50 @@
             }
         }
 
-        // Inicialização
-        initAuth();
-        setupRealtimeListener();
-        window.populateTeamSelect();
-        window.switchTab('info');
-
-        // Para resetar um card manualmente no console: resetAdoption('ID')
-        window.resetAdoption = async (id) => {
-             await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'adoptions', id), { team: null }, { merge: true }); // Ou deleteDoc
-             console.log("Resetado");
+        function changePage(newPage) {
+            const totalPages = Math.ceil(childrenData.length / itemsPerPage);
+            if (newPage < 1 || newPage > totalPages) return;
+            currentPage = newPage;
+            renderCards(currentPage);
+            document.getElementById('cards-container').scrollIntoView({ behavior: 'smooth' });
         }
 
+        function openModal(id) {
+            const child = childrenData.find(c => c.id === id);
+            if (!child) return;
+
+            document.getElementById('modalTitle').innerText = `Visualizando Carta #${child.id}`;
+            document.getElementById('modalText').innerText = child.letterText;
+            document.getElementById('downloadBtn').href = `${child.id}.jpg`;
+            
+            const modal = document.getElementById('letterModal');
+            const content = document.getElementById('letterModalContent');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const content = modal.querySelector('div[class*="transform"]');
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        document.getElementById('letterModal').addEventListener('click', (e) => {
+            if (e.target.id === 'letterModal') closeModal('letterModal');
+        });
+
+        // Inicialização
+        window.onload = function() {
+            renderCards(currentPage);
+            switchTab('info');
+        };
     </script>
 </body>
 </html>
