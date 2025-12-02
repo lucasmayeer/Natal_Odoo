@@ -90,6 +90,8 @@
             border-bottom-color: #714B67;
         }
         
+        /* --- ESTILOS CORRIGIDOS (CSS Puro) --- */
+
         /* Estilos para a Paginação */
         .pagination-button {
             padding: 0.5rem 1rem;
@@ -157,10 +159,10 @@
     <header class="pt-8 pb-4 relative z-10 text-center">
         <div class="container mx-auto px-4">
             <!-- Logo Container -->
-            <div class="w-full max-w-[180px] mx-auto mb-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Odoo_logo.svg/2560px-Odoo_logo.svg.png" 
+            <div class="w-full max-w-[280px] mx-auto mb-6">
+                <img src="odoo_logo_inverted.svg" 
                      alt="Logo Odoo" 
-                     class="w-full h-auto object-contain drop-shadow-xl brightness-110 filter">
+                     class="w-full h-auto object-contain drop-shadow-2xl brightness-110 filter hover:scale-105 transition-transform duration-500">
             </div>
             
             <h1 class="text-3xl md:text-4xl text-white font-bold tracking-wide uppercase christmas-font drop-shadow-md">Natal Solidário Odoo</h1>
@@ -424,29 +426,26 @@
             "Time do Lub (Gerentes)"
         ];
 
-        // --- Dados das Cartinhas (21 Cartas no total - Transcritas) ---
+        // --- Dados das Cartinhas (18 Cartas no total - Correto) ---
         let childrenData = [
-            { id: "1652416", age: 4, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO AZUL", letterText: "Olá, Meu nome é Daniel e tenho 4 anos. Gosto de brincar com carrinhos. Gostaria de ganhar um carrinho de controle remoto azul. Obrigado Papai Noel 🚗", thumbColor: "bg-blue-100", assignedTeam: null },
-            { id: "1652572", age: 5, gender: "Feminino", request: "Casa de boneca", spec: "CASA DE BONECA LADYBUG", letterText: "Olá, meu nome é Alice e tenho 5 anos. Gosto de brincar de bonecas e gostaria de ganhar uma casa de boneca da Ladybug. Obrigado Papai Noel 🐞", thumbColor: "bg-pink-100", assignedTeam: null },
-            { id: "1652746", age: 5, gender: "Masculino", request: "Pista de corrida", spec: "PISTA DE CORRIDA HOTWHEELS", letterText: "Olá, Meu nome é Davi Gabriel e tenho 5 anos. Brinco de boneco homem aranha e moto. Gostaria de ganhar uma pista de corrida. Obrigado Papai Noel 🏎️", thumbColor: "bg-orange-100", assignedTeam: null },
-            { id: "1652962", age: 6, gender: "Masculino", request: "Moto de brinquedo", spec: "MOTO DE BRINQUEDO GRANDE", letterText: "Olá, meu nome é Davi Lucca e tenho 5 anos. Brinco de carrinhos grandes. Gostaria de ganhar uma moto de brinquedo. Obrigado Papai Noel 🏍️", thumbColor: "bg-red-100", assignedTeam: null },
-            { id: "1653354", age: 5, gender: "Feminino", request: "Boneca", spec: "BONECA COM MALA DE ROUPA", letterText: "Olá, meu nome é Melissa tenho 5 anos gostaria de ganhar uma boneca com malas de roupas. Obrigado papai noel 👗", thumbColor: "bg-pink-100", assignedTeam: null },
-            { id: "1653767", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO SONIC", letterText: "Meu nome é Miguel e tenho 4 anos... gosto do sonic, por isso quero do Papai Noel um boneco do Sonic... 🦔", thumbColor: "bg-blue-100", assignedTeam: null },
-            { id: "1654249", age: 4, gender: "Masculino", request: "Hot wheels", spec: "PISTA DA HOT WHEELS", letterText: "Meu nome é Thomas e quero ganhar uma pista da Hot Wheels 🏎️", thumbColor: "bg-orange-100", assignedTeam: null },
-            { id: "1654586", age: 3, gender: "Feminino", request: "Roupa", spec: "4 ROUPAS ROSA E MAQUINA DE BOLHAS", letterText: "PAPAI NOEL, MEU NOME É ELOÁ E GOSTARIA DE GANHAR UMA MAQUINA DE BOLHA DE SABÃO E ROUPAS 🫧", thumbColor: "bg-purple-100", assignedTeam: null },
-            { id: "1655949", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO HOMEM ARANHA", letterText: "Sou o Arthur, tenho 4 anos. Gosto muito de super-heróis. Gostaria de ganhar um boneco do Homem Aranha. Obrigado! 🕷️", thumbColor: "bg-red-100", assignedTeam: null },
-            { id: "1658482", age: 6, gender: "Feminino", request: "Boneca", spec: "BARBIE E A CASA DA BARBIE COM ROUPINHAS", letterText: "Ana Ruth, 6 anos... Meu sonho é ter uma Barbie e a casa da Barbie com roupinhas para brincar de casinha. 🏠", thumbColor: "bg-pink-100", assignedTeam: null },
-            { id: "1658529", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN", letterText: "Sou a Isadora, tenho 5 anos. Queria muito uma bebe reborn para cuidar dela como se fosse minha filhinha de verdade. 👶", thumbColor: "bg-teal-100", assignedTeam: null },
-            { id: "1659952", age: 6, gender: "Feminino", request: "Boneca", spec: "UM BEBE REBORN E UM CARRINHO DE BONECA", letterText: "Sou a Ana Clara... 6 anos... Gostaria de ganhar uma bebe reborn e um carrinho de boneca para passear com ela. 🍼", thumbColor: "bg-purple-100", assignedTeam: null },
-            { id: "1659978", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E BOLINHA DE SABAO", letterText: "Hailey tem 5 anos... Sou uma menina muito doce. Gostaria de ganhar uma bebe reborn e bolinha de sabao para brincar. 🫧", thumbColor: "bg-pink-100", assignedTeam: null },
-            { id: "1660010", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E SLIME", letterText: "Chloe tem 5 anos... Adoro brincar de boneca. Queria muito uma bebe reborn e um slime para me divertir. 💖", thumbColor: "bg-purple-100", assignedTeam: null },
-            { id: "1660286", age: 5, gender: "Masculino", request: "Pista de Carrinho", spec: "PISTA DE CARRINHO COBRA DA HOT WHEELS", letterText: "Lucas tem 5 anos e ama brincar de carros... gostaria de ganhar uma pista de carrinho cobra da hot wheels... 🐍", thumbColor: "bg-yellow-100", assignedTeam: null },
-            { id: "1660394", age: 5, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO MC QUEEN", letterText: "Gustavo tem 5 anos... Sou fã do Relâmpago McQueen. Gostaria de ganhar o carrinho de controle remoto dele. ⚡", thumbColor: "bg-red-100", assignedTeam: null },
-            { id: "1660943", age: 6, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO E PIPA", letterText: "Dimitri... 6 anos, ama brincar com coisas... gostaria de ganhar um carrinho de controle remoto e uma pipa...", thumbColor: "bg-blue-100", assignedTeam: null },
-            { id: "1661027", age: 5, gender: "Masculino", request: "Carrinho de controle remoto", spec: "UM CARRINHO DE CONTROLE REMOTO E UMA PIPA", letterText: "Calebe, 5 anos, menino alegre cheio de energia. Adora brincar com carros. Gostaria de ganhar um carrinho de controle remoto e uma pipa. 🪁", thumbColor: "bg-green-100", assignedTeam: null },
-            { id: "1889235", age: 8, gender: "Feminino", request: "Boneca Kit slimeKit", spec: "BEBE REBORN KIT DE SLIME KIT DE CABELO", letterText: "NATAL PAPAI NOEL VOCE PODE ME DAR UMA BEBE REBORN E UM KIT DE SLIME E DE ARRUMAR CABELO. OBRIGADA! (Laura)", thumbColor: "bg-pink-100", assignedTeam: null },
-            { id: "1897050", age: 8, gender: "Feminino", request: "Patinete Livro", spec: "PATINETE 2 RODAS UM PRESENTE PRA IRMÃ DE 1 ANO", letterText: "Meu nome é Lara e tenho 8 anos. E queria um patinete de 2 rodas. O que me deu quebrou... E pra minha irmã Pode traze qualquer coisa ela tem 1 ano eo nome é Radasa. 🛴", thumbColor: "bg-yellow-100", assignedTeam: null },
-            { id: "1904825", age: 8, gender: "Feminino", request: "Material Escolar", spec: "GARRAFINHA DE ÁGUA DA CAPIVARA", letterText: "MEU NOME É HELOISA COIMBRA EU JÁ VOU FAZER 8 ANOS DIA 19 DE FEVEREIRO E EU SOU AQUARIANA... FELIZ NATAL HO HO HO 🦦", thumbColor: "bg-green-100", assignedTeam: null }
+            { id: "1652416", name: "Daniel", age: 4, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO AZUL", letterText: "Olá, Meu nome é Daniel e tenho 4 anos. Gosto de brincar com carrinhos. Gostaria de ganhar um carrinho de controle remoto azul. Obrigado Papai Noel 🚗", thumbColor: "bg-blue-100", assignedTeam: null },
+            { id: "1652572", name: "Alice", age: 5, gender: "Feminino", request: "Casa de boneca", spec: "CASA DE BONECA LADYBUG", letterText: "Olá, meu nome é Alice e tenho 5 anos. Gosto de brincar de bonecos e gostaria de ganhar uma casa de boneca da Ladybug. Obrigado Papai Noel 🐞", thumbColor: "bg-pink-100", assignedTeam: null },
+            { id: "1652746", name: "Davi Gabriel", age: 5, gender: "Masculino", request: "Pista de corrida", spec: "PISTA DE CORRIDA HOTWHEELS", letterText: "Olá, Meu nome é Davi Gabriel e tenho 5 anos. Brinco de boneco homem aranha e moto. Gostaria de ganhar uma pista de corrida. Obrigado Papai Noel 🏎️", thumbColor: "bg-orange-100", assignedTeam: null },
+            { id: "1653354", name: "Melissa", age: 5, gender: "Feminino", request: "Boneca", spec: "BONECA COM MALA DE ROUPA", letterText: "Olá, meu nome é Melissa tenho 5 anos gostaria de ganhar uma boneca com malas de roupas. Obrigado papai noel 👗", thumbColor: "bg-pink-100", assignedTeam: null },
+            { id: "1653767", name: "Miguel", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO SONIC", letterText: "meu nome é miguel e eu adoro o sonic, por isso quero do Papai Noel um Sonic, eu vou brincar muito com ele! 🦔", thumbColor: "bg-blue-100", assignedTeam: null },
+            { id: "1654249", name: "Thomas", age: 4, gender: "Masculino", request: "Hot wheels", spec: "PISTA DA HOT WHEELS", letterText: "meu nome é Thomas e quero ganhar uma pista da Hotweels 🏎️", thumbColor: "bg-orange-100", assignedTeam: null },
+            { id: "1654586", name: "Eloá", age: 3, gender: "Feminino", request: "Roupa", spec: "4 ROUPAS ROSA E MAQUINA DE BOLHAS", letterText: "PAPAI NOEL, MEU NOME É ELOÁ E GOSTARIA DE GANHAR UMA MAQUINA DE BOLHA DE SABÃO E ROUPAS ROSA 🫧", thumbColor: "bg-purple-100", assignedTeam: null },
+            { id: "1655949", name: "Gustavo", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO HOMEM ARANHA", letterText: "PAPAI NOEL, GOSTARIA DE GANHAR UMA TEIA E BRINQUEDO DO HOMEM ARANHA E ROUPAS. MEU NOME É GUSTAVO 🕷️", thumbColor: "bg-red-100", assignedTeam: null },
+            { id: "1658529", name: "Annalice", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN", letterText: "Annalice, 5 anos. Adora brincar de casinha no canto das bonecas. Seu pedido foi uma bebê reborn com acessórios que facilitam a vida das mamães como chupeta e mamadeira. 👶", thumbColor: "bg-teal-100", assignedTeam: null },
+            { id: "1659952", name: "Marya Kanandra", age: 6, gender: "Feminino", request: "Boneca", spec: "UM BEBE REBORN E UM CARRINHO DE BONECA", letterText: "Marya Kanandra tem um jeitinho doce e encantador. Ela adora brincar de boneca. Seu maior desejo é ganhar uma bebê reborn e um carrinho de boneca. 🍼", thumbColor: "bg-purple-100", assignedTeam: null },
+            { id: "1659978", name: "Arielly", age: 5, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E BOLINHA DE SABAO", letterText: "Arielly tem 5 anos é uma menina doce e sonhadora. Ela ama brincar de boneca. O seu sonho é ganhar uma bebê reborn e bolha de sabão. 🫧", thumbColor: "bg-pink-100", assignedTeam: null },
+            { id: "1660010", name: "Chloe", age: 6, gender: "Feminino", request: "Boneca", spec: "BEBE REBORN E SLIME", letterText: "Chloe tem 6 anos e é uma criança cheia de energia e sonhadora. Ela ama brincar de bonecas e seu sonho é ganhar uma bebê reborn e uma slime. 💖", thumbColor: "bg-purple-100", assignedTeam: null },
+            { id: "1660286", name: "Lucca", age: 5, gender: "Masculino", request: "Pista de Carrinho", spec: "PISTA DE CARRINHO COBRA DA HOT WHEELS", letterText: "Lucca tem 5 anos e ama brincar de carrinho. Seu sonho é ganhar uma pista de carrinho de cobra da Hot Wheels. 🐍", thumbColor: "bg-yellow-100", assignedTeam: null },
+            { id: "1660943", name: "Benicio", age: 6, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO E PIPA", letterText: "Benicio, 6 anos, adora brincar com carros, seu momento preferido do dia é quando aposta qual corre mais rapido com os colegas. Seu desejo é ter um de controle remoto e uma pipa. 🪁", thumbColor: "bg-blue-100", assignedTeam: null },
+            { id: "1661027", name: "Calebe", age: 5, gender: "Masculino", request: "Carrinho de controle remoto", spec: "UM CARRINHO DE CONTROLE REMOTO E UMA PIPA", letterText: "Calebe, 5 anos, menino alegre e cheio de energia. Adora brincar com carros, os preferidos são os que ganham as corridas que faz com os colegas. Seu desejo é ter um de controle remoto e uma pipa. 🪁", thumbColor: "bg-green-100", assignedTeam: null },
+            { id: "1889235", name: "Laura", age: 8, gender: "Feminino", request: "Boneca Kit slimeKit", spec: "BEBE REBORN KIT DE SLIME KIT DE CABELO", letterText: "FELIZ NATAL PAPAI NOEL VOCE PODE MIDAR UMA BEBE REBORN E UM CITI DE ISLAIME E DE ARUMAR CABELO", thumbColor: "bg-pink-100", assignedTeam: null },
+            { id: "1897050", name: "Lara", age: 8, gender: "Feminino", request: "Patinete Livro", spec: "PATINETE 2 RODAS UM PRESENTE PRA IRMÃ DE 1 ANO", letterText: "QUERIDO NOEL MEU NOME É LARA E TENHO 8 ANOS E QUERIA UM PATINETE DE 2 RODAS O QUE ME DEU QUEBROU E PRA MINHA IRMÃ PODE TRAZE QUALQUER COISA ELA TEM 1 ANO EO NOME É RADASA. 🛴", thumbColor: "bg-yellow-100", assignedTeam: null },
+            { id: "1904825", name: "Heloisa", age: 8, gender: "Feminino", request: "Material Escolar", spec: "GARRAFINHA DE ÁGUA DA CAPIVARA", letterText: "QUERIDO PAPAI NOEL. EU QUERO UM KIT DE CAPIVARA COMPLETO DE MATERIAL ESCOLAR COM GARRAFA E ATE APAGADOR DE CANETA. MEU NOME É HELOISA COIMBRA EU JÁ VOU FAZER 8 ANOS DIA 19 DE FEVEREIRO E EU SOU AQUARIANA. FELIZ NATAL HO HO HO 🦦", thumbColor: "bg-green-100", assignedTeam: null }
         ];
 
         let currentChildIdForTeam = null;
@@ -481,6 +480,10 @@
                     `;
                 }
 
+                // Título dinâmico: Cartinha do [Nome] ou Cartinha da [Nome]
+                const titlePrefix = child.gender === 'Masculino' ? 'Cartinha do' : 'Cartinha da';
+                const cardTitle = `${titlePrefix} ${child.name}`;
+
                 const cardHTML = `
                     <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-odoo-base group">
                         <!-- Topo do Card -->
@@ -496,7 +499,7 @@
                         <!-- Conteúdo do Card -->
                         <div class="p-5 flex-grow flex flex-col text-left">
                             <div class="mb-4 space-y-2">
-                                <h3 class="text-xl font-bold text-gray-800 christmas-font tracking-wide">Cartinha de Natal</h3>
+                                <h3 class="text-xl font-bold text-gray-800 christmas-font tracking-wide">${cardTitle}</h3>
                                 
                                 <div class="text-sm text-gray-600 space-y-1">
                                     <p><span class="font-bold text-odoo-base">Idade:</span> ${child.age} anos</p>
