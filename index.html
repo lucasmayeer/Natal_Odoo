@@ -23,7 +23,7 @@
                             base: '#714B67', // Roxo Odoo
                             light: '#8f6a85',
                             dark: '#5a3750',
-                            accent: '#00E891'
+                            accent: '#00E891' // Verde Odoo (aprox) para detalhes
                         }
                     },
                     animation: {
@@ -48,7 +48,8 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background-color: #714B67;
+            background-color: #714B67; /* Roxo Odoo Base */
+            /* Padrão de textura sutil de linhas (grid) */
             background-image: 
                 linear-gradient(90deg, transparent 50%, rgba(255,255,255,0.05) 50%),
                 linear-gradient(0deg, transparent 50%, rgba(255,255,255,0.05) 50%);
@@ -63,11 +64,12 @@
             font-family: 'Mountains of Christmas', cursive;
         }
         
+        /* Classe específica para a fonte Inter */
         .font-inter {
             font-family: 'Inter', sans-serif;
         }
 
-        #letterModal {
+        #letterModal, #teamModal {
             transition: opacity 0.3s ease-in-out;
         }
 
@@ -78,11 +80,23 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        /* Paginação */
+        .team-input {
+            border: none;
+            border-bottom: 2px solid #e5e7eb;
+            transition: border-color 0.3s;
+        }
+        .team-input:focus {
+            outline: none;
+            border-bottom-color: #714B67;
+        }
+        
+        /* --- ESTILOS CORRIGIDOS (CSS Puro) --- */
+
+        /* Estilos para a Paginação */
         .pagination-button {
             padding: 0.5rem 1rem;
             background-color: white;
-            color: #714B67;
+            color: #714B67; /* odoo-base */
             font-weight: bold;
             border-radius: 0.375rem;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -103,7 +117,7 @@
             color: white;
         }
 
-        /* Abas */
+        /* Estilo das Abas de Navegação */
         .nav-tab {
             padding: 0.75rem 1.5rem;
             font-weight: 700;
@@ -115,6 +129,8 @@
             align-items: center;
             gap: 0.5rem;
         }
+        
+        /* Estado Ativo: Branco Brilhante */
         .nav-tab.active {
             background-color: rgba(255, 255, 255, 0.2);
             color: #ffffff;
@@ -123,11 +139,14 @@
             transform: scale(1.05);
             backdrop-filter: blur(4px);
         }
+        
+        /* Estado Inativo: Transparente/Opaco */
         .nav-tab.inactive {
             background-color: transparent;
             color: rgba(255, 255, 255, 0.5);
             border-color: transparent;
         }
+        
         .nav-tab.inactive:hover {
             color: #ffffff;
             background-color: rgba(255, 255, 255, 0.1);
@@ -136,19 +155,21 @@
 </head>
 <body class="min-h-screen pb-12 text-gray-800 flex flex-col">
 
-    <!-- Header -->
+    <!-- Header Limpo com Logo Centralizada -->
     <header class="pt-8 pb-4 relative z-10 text-center">
         <div class="container mx-auto px-4">
+            <!-- Logo Container -->
             <div class="w-full max-w-[280px] mx-auto mb-6">
                 <img src="odoo_logo_inverted.svg" 
                      alt="Logo Odoo" 
                      class="w-full h-auto object-contain drop-shadow-2xl brightness-110 filter hover:scale-105 transition-transform duration-500">
             </div>
+            
             <h1 class="text-3xl md:text-4xl text-white font-bold tracking-wide uppercase christmas-font drop-shadow-md">Natal Solidário Odoo</h1>
         </div>
     </header>
 
-    <!-- Navegação -->
+    <!-- Navegação entre Sessões -->
     <div class="container mx-auto px-4 mb-8">
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 font-inter">
             <button onclick="switchTab('info')" id="tab-info" class="nav-tab active">
@@ -162,15 +183,17 @@
         </div>
     </div>
 
-    <!-- Conteúdo -->
+    <!-- Conteúdo Principal -->
     <main class="container mx-auto px-4 flex-grow relative">
         
-        <!-- ABA: SOBRE O PROJETO -->
+        <!-- SESSÃO 1: INFORMAÇÕES (Sobre o Projeto) -->
         <div id="view-info" class="animate-fade-in max-w-5xl mx-auto">
             <div class="grid md:grid-cols-12 gap-6">
                 
+                <!-- Coluna Principal: Boas Vindas -->
                 <div class="md:col-span-12 bg-white rounded-2xl shadow-xl overflow-hidden font-inter">
                     <div class="bg-odoo-dark p-8 text-center relative overflow-hidden">
+                        <!-- Círculos decorativos -->
                         <div class="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-10 -translate-y-10"></div>
                         <div class="absolute bottom-0 right-0 w-48 h-48 bg-white/5 rounded-full translate-x-10 translate-y-10"></div>
                         
@@ -183,6 +206,7 @@
                     
                     <div class="p-8">
                         <div class="grid md:grid-cols-3 gap-8">
+                            <!-- Card: Como Funciona -->
                             <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div class="w-12 h-12 bg-purple-100 text-odoo-base rounded-lg flex items-center justify-center mb-4">
                                     <i data-lucide="heart-handshake" class="w-6 h-6"></i>
@@ -193,16 +217,18 @@
                                 </p>
                             </div>
 
+                            <!-- Card: Prazo -->
                             <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-lg flex items-center justify-center mb-4">
                                     <i data-lucide="calendar-clock" class="w-6 h-6"></i>
                                 </div>
                                 <h3 class="font-bold text-gray-800 text-lg mb-2">Prazo Importante</h3>
                                 <p class="text-gray-600 text-sm leading-relaxed">
-                                    O período para adotar uma criança vai até o dia <strong class="text-odoo-base">05/12</strong>.
+                                    O período para adotar uma criança vai até o dia <strong class="text-odoo-base">05/12</strong>. Não deixe para a última hora!
                                 </p>
                             </div>
 
+                            <!-- Card: Entrega -->
                             <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div class="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mb-4">
                                     <i data-lucide="map-pin" class="w-6 h-6"></i>
@@ -222,6 +248,31 @@
                     </div>
                 </div>
 
+                <!-- Banner Inferior: Orientações -->
+                <div class="md:col-span-12">
+                    <div class="bg-gradient-to-r from-odoo-light to-odoo-base rounded-2xl p-6 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 font-inter border-2 border-white/20">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-white/20 p-3 rounded-full shrink-0">
+                                <i data-lucide="gift" class="w-8 h-8 text-yellow-300"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-yellow-300 mb-1">Preparando o Presente</h3>
+                                <p class="text-white/90 text-sm">
+                                    Lembre-se: o presente deve estar <strong>embrulhado</strong> e <strong>etiquetado</strong> com a cartinha da criança.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-black/20 px-4 py-3 rounded-lg shrink-0">
+                            <i data-lucide="life-buoy" class="w-5 h-5 text-white/70"></i>
+                            <div class="text-sm">
+                                <p class="font-bold">Precisa de ajuda?</p>
+                                <p class="text-white/80 text-xs">O Backoffice está disponível para apoiar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão de Ação -->
                 <div class="md:col-span-12 text-center mt-4">
                     <button onclick="switchTab('cards')" class="bg-yellow-400 hover:bg-yellow-500 text-odoo-dark font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg flex items-center gap-2 mx-auto font-inter">
                         <i data-lucide="sparkles" class="w-5 h-5"></i>
@@ -232,22 +283,26 @@
             </div>
         </div>
 
-        <!-- ABA: CARTINHAS -->
+        <!-- SESSÃO 2: CARTINHAS (Grid) -->
         <div id="view-cards" class="hidden animate-fade-in">
+            <!-- Grid ajustado para 3 colunas no máximo -->
             <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <!-- Cards injetados via JS -->
+                <!-- Cards gerados via JS -->
             </div>
             
+            <!-- Container da Paginação -->
             <div id="pagination-container" class="flex justify-center items-center gap-2 mb-8">
-                <!-- Paginação injetada via JS -->
+                <!-- Botões de paginação gerados via JS -->
             </div>
         </div>
 
     </main>
 
-    <!-- Modal Leitura -->
+    <!-- Modal de Leitura da Carta -->
     <div id="letterModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full overflow-hidden transform transition-all scale-95 opacity-0" id="letterModalContent">
+            
+            <!-- Modal Header -->
             <div class="bg-odoo-base p-4 flex justify-between items-center text-white">
                 <div class="flex items-center gap-2">
                     <i data-lucide="mail-open" class="w-5 h-5"></i>
@@ -257,21 +312,61 @@
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
+
+            <!-- Modal Body (A Carta) -->
             <div class="p-6 bg-yellow-50 overflow-y-auto max-h-[70vh] relative flex flex-col items-center">
                 <div class="paper-texture border border-gray-200 p-8 shadow-md rotate-1 transform mx-auto max-w-md relative w-full mb-6">
                     <div class="absolute top-4 right-4 text-red-400 opacity-50">
                         <i data-lucide="stamp" class="w-12 h-12"></i>
                     </div>
+                    <!-- Texto Transcrito -->
                     <p class="text-sm text-gray-400 mb-4 font-mono text-right">Natal 2025</p>
-                    <div class="handwritten text-2xl text-blue-900 leading-loose" id="modalText"></div>
+                    <div class="handwritten text-2xl text-blue-900 leading-loose" id="modalText">
+                        <!-- Texto inserido via JS -->
+                    </div>
                 </div>
+
+                <!-- Botão de Download da Imagem -->
                 <a id="downloadBtn" href="#" download class="flex items-center gap-2 bg-white text-odoo-base border-2 border-odoo-base font-bold py-2 px-6 rounded-full hover:bg-odoo-base hover:text-white transition-colors shadow-sm">
                     <i data-lucide="download" class="w-5 h-5"></i>
                     Baixar Cartinha Original
                 </a>
             </div>
+
+            <!-- Modal Footer -->
             <div class="p-4 bg-gray-50 border-t flex justify-end gap-3">
                 <button onclick="closeModal('letterModal')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg font-bold transition-colors">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Seleção de Time -->
+    <div id="teamModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden transform transition-all scale-95 opacity-0" id="teamModalContent">
+            
+            <div class="bg-yellow-400 p-4 text-yellow-900 flex justify-between items-center">
+                <h3 class="font-bold text-lg flex items-center gap-2">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                    Selecione seu Time
+                </h3>
+                <button onclick="closeModal('teamModal')" class="hover:bg-yellow-500 p-1 rounded-full transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="p-6">
+                <p class="text-gray-600 mb-4 text-sm font-inter">Qual time da Odoo está adotando esta estrelinha?</p>
+                <select id="teamSelect" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-odoo-base focus:outline-none bg-white text-gray-700 font-inter">
+                    <option value="" disabled selected>Escolha um time...</option>
+                </select>
+                <p class="text-xs text-red-500 mt-2 font-inter">Atenção: Ao confirmar, a carta será bloqueada para outros times.</p>
+            </div>
+
+            <div class="p-4 bg-gray-50 border-t flex justify-end gap-3">
+                <button onclick="closeModal('teamModal')" class="px-4 py-2 text-gray-500 hover:bg-gray-200 rounded-lg font-bold font-inter">Cancelar</button>
+                <button onclick="saveTeamSelection()" class="px-6 py-2 bg-odoo-base hover:bg-odoo-dark text-white rounded-lg font-bold shadow transition-colors font-inter">
+                    Confirmar
+                </button>
             </div>
         </div>
     </div>
@@ -284,11 +379,11 @@
     <script>
         // --- DADOS DAS CARTINHAS (HARD CODE) ---
         // Para adotar, altere "assignedTeam" de null para o nome do time (ex: "Time do Backoffice")
+        // IDs REMOVIDOS: 1658482, 1660394, 1652962
         const childrenData = [
             { id: "1652416", assignedTeam: "Time da RHSA", name: "Daniel", age: 4, gender: "Masculino", request: "Carrinho de controle remoto", spec: "CARRINHO DE CONTROLE REMOTO AZUL", letterText: "Olá, Meu nome é Daniel e tenho 4 anos. Gosto de brincar com carrinhos. Gostaria de ganhar um carrinho de controle remoto azul. Obrigado Papai Noel 🚗", thumbColor: "bg-blue-100" },
-            { id: "1652572", assignedTeam: null, name: "Alice", age: 5, gender: "Feminino", request: "Casa de boneca", spec: "CASA DE BONECA LADYBUG", letterText: "Olá, meu nome é Alice e tenho 5 anos. Gosto de brincar de bonecos e gostaria de ganhar uma casa de boneca da Ladybug. Obrigado Papai Noel 🐞", thumbColor: "bg-pink-100" },
+            { id: "1652572", assignedTeam: "Time do JAPO", name: "Alice", age: 5, gender: "Feminino", request: "Casa de boneca", spec: "CASA DE BONECA LADYBUG", letterText: "Olá, meu nome é Alice e tenho 5 anos. Gosto de brincar de bonecos e gostaria de ganhar uma casa de boneca da Ladybug. Obrigado Papai Noel 🐞", thumbColor: "bg-pink-100" },
             { id: "1652746", assignedTeam: "Time da JESM", name: "Davi Gabriel", age: 5, gender: "Masculino", request: "Pista de corrida", spec: "PISTA DE CORRIDA HOTWHEELS", letterText: "Olá, Meu nome é Davi Gabriel e tenho 5 anos. Brinco de boneco homem aranha e moto. Gostaria de ganhar uma pista de corrida. Obrigado Papai Noel 🏎️", thumbColor: "bg-orange-100" },
-            { id: "1652962", assignedTeam: "Time do JAPO", name: "Davi Lucca", age: 6, gender: "Masculino", request: "Moto de brinquedo", spec: "MOTO DE BRINQUEDO GRANDE", letterText: "Olá, meu nome é Davi Lucca e tenho 5 anos. Brinco de carrinhos grandes. Gostaria de ganhar uma moto de brinquedo. Obrigado Papai Noel 🏍️", thumbColor: "bg-red-100" },
             { id: "1653354", assignedTeam: "Time do GABN", name: "Melissa", age: 5, gender: "Feminino", request: "Boneca", spec: "BONECA COM MALA DE ROUPA", letterText: "Olá, meu nome é Melissa tenho 5 anos gostaria de ganhar uma boneca com malas de roupas. Obrigado papai noel 👗", thumbColor: "bg-pink-100" },
             { id: "1653767", assignedTeam: "Time do HMAZ", name: "Miguel", age: 4, gender: "Masculino", request: "Boneco", spec: "BONECO DO SONIC", letterText: "meu nome é miguel e eu adoro o sonic, por isso quero do Papai Noel um Sonic, eu vou brincar muito com ele! 🦔", thumbColor: "bg-blue-100" },
             { id: "1654249", assignedTeam: "Time do GAMA", name: "Thomas", age: 4, gender: "Masculino", request: "Hot wheels", spec: "PISTA DA HOT WHEELS", letterText: "meu nome é Thomas e quero ganhar uma pista da Hotweels 🏎️", thumbColor: "bg-orange-100" },
@@ -309,9 +404,33 @@
         let currentPage = 1;
         const itemsPerPage = 15;
 
-        // --- Renderização ---
+        // --- Lista de Times ---
+        const teamsList = [
+            "Time de Backoffice",
+            "Time de Customer Success",
+            "Time do ARRA",
+            "Time do GUAM",
+            "Time da JESM",
+            "Time da LUPA",
+            "Time do GAMA",
+            "Time do NACE",
+            "Time do BRCA",
+            "Time do GABN",
+            "Time do RODM",
+            "Time do LCOR",
+            "Time do RHSA",
+            "Time da NIME",
+            "Time do HMAZ",
+            "Time do SCLO",
+            "Time do JAPO",
+            "Time do Lub (Gerentes)"
+        ];
+
+        // --- Funções de Renderização ---
+
         function renderCards(page = 1) {
             const container = document.getElementById('cards-container');
+            if (!container) return;
             container.innerHTML = '';
 
             const startIndex = (page - 1) * itemsPerPage;
@@ -319,29 +438,32 @@
             const paginatedData = childrenData.slice(startIndex, endIndex);
 
             paginatedData.forEach(child => {
-                const titlePrefix = child.gender === 'Masculino' ? 'Cartinha do' : 'Cartinha da';
-                const cardTitle = `${titlePrefix} ${child.name}`;
+                let teamButtonHTML;
                 
-                // Lógica de Status (Hard Code)
-                let statusButtonHTML;
                 if (child.assignedTeam) {
-                    statusButtonHTML = `
-                        <button class="w-full bg-green-600 text-white font-bold py-2 px-4 rounded shadow cursor-default flex items-center justify-center gap-2 opacity-90">
+                    // Estado: Time Selecionado (Botão verde fixo)
+                    teamButtonHTML = `
+                        <button class="w-full bg-green-600 text-white font-bold py-2 px-4 rounded shadow cursor-default flex items-center justify-center gap-2">
                             <i data-lucide="check-circle" class="w-4 h-4"></i>
                             <span class="truncate">Adotado por: ${child.assignedTeam}</span>
                         </button>
                     `;
                 } else {
-                    statusButtonHTML = `
-                        <button class="w-full bg-yellow-400 text-yellow-900 font-bold py-2 px-4 rounded shadow cursor-default flex items-center justify-center gap-2">
-                            <i data-lucide="gift" class="w-4 h-4"></i>
-                            Cartinha Disponível
+                    // Estado: Selecionar Time (Botão amarelo interativo)
+                    teamButtonHTML = `
+                        <button onclick="openTeamModal('${child.id}')" class="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded shadow transition-colors flex items-center justify-center gap-2">
+                            <i data-lucide="users" class="w-4 h-4"></i>
+                            Selecionar Time
                         </button>
                     `;
                 }
 
+                const titlePrefix = child.gender === 'Masculino' ? 'Cartinha do' : 'Cartinha da';
+                const cardTitle = `${titlePrefix} ${child.name}`;
+
                 const cardHTML = `
                     <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-odoo-base group">
+                        <!-- Topo do Card -->
                         <div class="h-28 ${child.thumbColor} relative flex items-center justify-center border-b border-dashed border-gray-300">
                             <div class="bg-white p-3 shadow-md transform group-hover:-rotate-6 transition-transform duration-300 rounded-sm">
                                 <i data-lucide="file-text" class="w-8 h-8 text-odoo-base"></i>
@@ -351,9 +473,11 @@
                             </div>
                         </div>
 
+                        <!-- Conteúdo do Card -->
                         <div class="p-5 flex-grow flex flex-col text-left">
                             <div class="mb-4 space-y-2">
                                 <h3 class="text-xl font-bold text-gray-800 christmas-font tracking-wide">${cardTitle}</h3>
+                                
                                 <div class="text-sm text-gray-600 space-y-1">
                                     <p><span class="font-bold text-odoo-base">Idade:</span> ${child.age} anos</p>
                                     <p><span class="font-bold text-odoo-base">Sexo:</span> ${child.gender}</p>
@@ -361,12 +485,15 @@
                                     <p><span class="font-bold text-odoo-base">Detalhe:</span> ${child.spec}</p>
                                 </div>
                             </div>
+                            
+                            <!-- Área de Ação -->
                             <div class="mt-auto space-y-3 pt-4 border-t border-gray-100">
                                 <button onclick="openModal('${child.id}')" class="w-full bg-odoo-base hover:bg-odoo-dark text-white font-bold py-2 px-4 rounded shadow transition-colors flex items-center justify-center gap-2">
                                     <i data-lucide="eye" class="w-4 h-4"></i>
                                     Ler Cartinha
                                 </button>
-                                ${statusButtonHTML}
+                                
+                                ${teamButtonHTML}
                             </div>
                         </div>
                     </div>
@@ -374,12 +501,15 @@
                 container.innerHTML += cardHTML;
             });
             
-            if (typeof lucide !== 'undefined') lucide.createIcons();
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
             renderPagination();
         }
 
         function renderPagination() {
             const container = document.getElementById('pagination-container');
+            if (!container) return;
             container.innerHTML = '';
             
             const totalPages = Math.ceil(childrenData.length / itemsPerPage);
@@ -407,33 +537,58 @@
             nextButton.onclick = () => changePage(currentPage + 1);
             container.appendChild(nextButton);
 
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
-
-        // --- Navegação e Modais ---
-        function switchTab(tabName) {
-            const infoView = document.getElementById('view-info');
-            const cardsView = document.getElementById('view-cards');
-            const tabInfo = document.getElementById('tab-info');
-            const tabCards = document.getElementById('tab-cards');
-
-            if (tabName === 'info') {
-                infoView.classList.remove('hidden');
-                cardsView.classList.add('hidden');
-                tabInfo.classList.add('active');
-                tabInfo.classList.remove('inactive');
-                tabCards.classList.remove('active');
-                tabCards.classList.add('inactive');
-            } else {
-                infoView.classList.add('hidden');
-                cardsView.classList.remove('hidden');
-                tabCards.classList.add('active');
-                tabCards.classList.remove('inactive');
-                tabInfo.classList.remove('active');
-                tabInfo.classList.add('inactive');
-                if (typeof lucide !== 'undefined') lucide.createIcons();
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
             }
         }
+
+        // --- Funções de Controle de Times ---
+
+        function populateTeamSelect() {
+            const select = document.getElementById('teamSelect');
+            select.innerHTML = '<option value="" disabled selected>Escolha um time...</option>';
+            
+            teamsList.forEach(team => {
+                const option = document.createElement('option');
+                option.value = team;
+                option.innerText = team;
+                select.appendChild(option);
+            });
+        }
+
+        let currentChildIdForTeam = null;
+
+        function openTeamModal(id) {
+            currentChildIdForTeam = id;
+            document.getElementById('teamSelect').value = "";
+            const modal = document.getElementById('teamModal');
+            const content = document.getElementById('teamModalContent');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function saveTeamSelection() {
+            const select = document.getElementById('teamSelect');
+            const selectedTeam = select.value;
+            
+            if (!selectedTeam) {
+                alert("Por favor, selecione um time.");
+                return;
+            }
+
+            const childIndex = childrenData.findIndex(c => c.id === currentChildIdForTeam);
+            if (childIndex !== -1) {
+                childrenData[childIndex].assignedTeam = selectedTeam;
+            }
+
+            closeModal('teamModal');
+            renderCards(currentPage);
+        }
+
+        // --- Funções Gerais ---
 
         function changePage(newPage) {
             const totalPages = Math.ceil(childrenData.length / itemsPerPage);
@@ -470,15 +625,50 @@
             }, 300);
         }
 
+        // --- Navegação entre Abas ---
+        function switchTab(tabName) {
+            const infoView = document.getElementById('view-info');
+            const cardsView = document.getElementById('view-cards');
+            const tabInfo = document.getElementById('tab-info');
+            const tabCards = document.getElementById('tab-cards');
+
+            if (tabName === 'info') {
+                infoView.classList.remove('hidden');
+                cardsView.classList.add('hidden');
+                
+                tabInfo.classList.add('active');
+                tabInfo.classList.remove('inactive');
+                tabCards.classList.remove('active');
+                tabCards.classList.add('inactive');
+            } else {
+                infoView.classList.add('hidden');
+                cardsView.classList.remove('hidden');
+                
+                tabCards.classList.add('active');
+                tabCards.classList.remove('inactive');
+                tabInfo.classList.remove('active');
+                tabInfo.classList.add('inactive');
+                
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+        }
+
         document.getElementById('letterModal').addEventListener('click', (e) => {
             if (e.target.id === 'letterModal') closeModal('letterModal');
+        });
+        
+        document.getElementById('teamModal').addEventListener('click', (e) => {
+            if (e.target.id === 'teamModal') closeModal('teamModal');
         });
 
         // Inicialização
         window.onload = function() {
+            populateTeamSelect();
             renderCards(currentPage);
+            // Inicia na aba de informações
             switchTab('info');
         };
+
     </script>
 </body>
 </html>
